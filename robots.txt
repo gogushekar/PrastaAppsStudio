@@ -1,0 +1,9 @@
+# AdMob / ads.txt crawlers (see https://support.google.com/admob/answer/9776740)
+User-agent: Google-adstxt
+Disallow:
+
+User-agent: Mediapartners-Google
+Disallow:
+
+User-agent: Googlebot
+Disallow:

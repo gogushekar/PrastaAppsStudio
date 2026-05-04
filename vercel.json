@@ -2,13 +2,14 @@
   "version": 2,
   "public": true,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/$1" }
+    { "source": "/", "destination": "/public/index.html" },
+    { "source": "/privacy-policy.html", "destination": "/public/privacy-policy.html" }
   ],
   "headers": [
     {
       "source": "/app-ads.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain" },
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
     }
