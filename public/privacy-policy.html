@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Prasta Apps Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #080D1E;
+      --blue:   #1AAFDF;
+      --orange: #F5A623;
+      --white:  #F0F4FF;
+      --muted:  #8AA0C0;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Instrument Sans', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    #bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 40% at 10% 20%, rgba(26,175,223,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 30% at 90% 80%, rgba(245,166,35,.05) 0%, transparent 70%),
+        var(--navy);
+    }
+
+    main { position: relative; z-index: 1; }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 60px;
+      border-bottom: 1px solid rgba(26,175,223,.12);
+      backdrop-filter: blur(10px);
+      background: rgba(8,13,30,.85);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-svg { width: 44px; height: 44px; }
+    .logo-text { font-family: 'Big Shoulders Display', sans-serif; font-size: 22px; letter-spacing: .04em; color: var(--white); }
+    .logo-text span { color: var(--blue); font-size: 13px; display: block; letter-spacing: .18em; font-family: 'Instrument Sans', sans-serif; font-weight: 400; margin-top: -2px; }
+    .back-link {
+      color: var(--muted); text-decoration: none; font-size: 14px;
+      letter-spacing: .06em; transition: color .2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .back-link:hover { color: var(--white); }
+
+    /* HERO STRIP */
+    .page-hero {
+      padding: 80px 60px 60px;
+      max-width: 860px; margin: 0 auto;
+      animation: fadeUp .6s ease both;
+    }
+    .page-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,166,35,.10); border: 1px solid rgba(245,166,35,.25);
+      color: var(--orange); font-size: 11px; letter-spacing: .14em;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
+      width: fit-content; text-transform: uppercase;
+    }
+    h1 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: .95; letter-spacing: -.01em;
+      margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--blue); }
+    .updated {
+      font-size: 13px; color: var(--muted); letter-spacing: .06em;
+      margin-top: 16px;
+    }
+
+    .divider {
+      height: 1px; max-width: 860px; margin: 0 auto 0;
+      background: linear-gradient(90deg, transparent, rgba(26,175,223,.3), transparent);
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 860px; margin: 0 auto;
+      padding: 60px 60px 100px;
+      animation: fadeUp .7s .1s ease both;
+    }
+
+    .section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    h2 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(24px, 3vw, 34px);
+      letter-spacing: .02em; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    h2 .num {
+      font-size: 13px; color: var(--blue); letter-spacing: .12em;
+      background: rgba(26,175,223,.10); border: 1px solid rgba(26,175,223,.2);
+      padding: 3px 10px; border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif; font-weight: 600;
+    }
+
+    p { color: var(--muted); margin-bottom: 16px; font-size: 16px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      color: var(--muted); padding-left: 20px; font-size: 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      margin-top: 12px;
+    }
+    ul li::marker { color: var(--blue); }
+
+    .highlight-box {
+      background: rgba(26,175,223,.06);
+      border: 1px solid rgba(26,175,223,.18);
+      border-left: 3px solid var(--blue);
+      border-radius: 10px; padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .highlight-box p { margin: 0; color: var(--white); font-size: 15px; }
+
+    a.inline { color: var(--blue); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: rgba(245,166,35,.06);
+      border: 1px solid rgba(245,166,35,.2);
+      border-radius: 16px; padding: 32px;
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    }
+    .contact-icon { font-size: 36px; }
+    .contact-text h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 22px; margin-bottom: 6px;
+    }
+    .contact-text p { margin: 0; font-size: 15px; }
+
+    /* FOOTER */
+    footer {
+      max-width: 860px; margin: 0 auto;
+      padding: 40px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-left { font-size: 13px; color: var(--muted); }
+    .footer-left strong { color: var(--white); }
+    .footer-badge {
+      font-size: 11px; letter-spacing: .12em; color: var(--muted);
+      border: 1px solid rgba(255,255,255,.1); padding: 6px 14px; border-radius: 100px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 20px 24px; }
+      .page-hero, .content { padding-left: 24px; padding-right: 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div id="bg"></div>
+<main>
+
+  <!-- NAV -->
+  <nav>
+    <a class="logo-wrap" href="index.html">
+      <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="44" height="44" rx="10" fill="#0D1628"/>
+        <rect x="10" y="8" width="8" height="28" rx="2" fill="#1AAFDF"/>
+        <path d="M18 8 Q34 8 34 18 Q34 28 18 28" stroke="#1AAFDF" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <rect x="11" y="14" width="14" height="8" rx="1" fill="#0D1628"/>
+        <line x1="21" y1="27" x2="34" y2="36" stroke="#F5A623" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        PRASTA
+        <span>APPS STUDIO</span>
+      </div>
+    </a>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-tag">Legal</div>
+    <h1>PRIVACY<br/><span class="accent">POLICY.</span></h1>
+    <p class="updated">Last updated: May 2025</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="section">
+      <div class="highlight-box">
+        <p>Prasta Apps Studio is committed to protecting your privacy. This policy explains what information our apps collect, how we use it, and your rights as a user.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">01</span> Information We Collect</h2>
+      <p>Our apps are designed to be lightweight and privacy-friendly. Depending on the specific app, we may collect:</p>
+      <ul>
+        <li><strong style="color:var(--white)">Usage Data</strong> — Anonymous information about how you use the app (e.g. features used, session length) to help us improve.</li>
+        <li><strong style="color:var(--white)">Device Information</strong> — Basic device details such as OS version and device model for compatibility and crash reporting.</li>
+        <li><strong style="color:var(--white)">Ad Data</strong> — If the app shows ads via Google AdMob, Google may collect data in accordance with their own privacy policy.</li>
+      </ul>
+      <p style="margin-top:16px;">We do <strong style="color:var(--white)">not</strong> collect your name, email, phone number, or any personally identifiable information unless you explicitly provide it.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">02</span> How We Use Information</h2>
+      <p>Any information collected is used solely to:</p>
+      <ul>
+        <li>Improve app performance and fix bugs</li>
+        <li>Understand which features are most useful</li>
+        <li>Display relevant advertisements through Google AdMob</li>
+        <li>Ensure compatibility across different Android devices</li>
+      </ul>
+      <p style="margin-top:16px;">We do not sell, trade, or rent your information to any third parties.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">03</span> Google AdMob & Third-Party Ads</h2>
+      <p>Some of our apps use Google AdMob to display advertisements. AdMob may use cookies and device identifiers to serve personalised ads based on your interests.</p>
+      <p>You can opt out of personalised advertising at any time through your device settings:</p>
+      <ul>
+        <li>Go to <strong style="color:var(--white)">Settings → Google → Ads</strong></li>
+        <li>Enable <strong style="color:var(--white)">"Opt out of Ads Personalisation"</strong></li>
+      </ul>
+      <p style="margin-top:16px;">For more details, see Google's privacy policy at <a class="inline" href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">04</span> Data Storage & Security</h2>
+      <p>Most of our apps store data locally on your device only. We do not operate our own servers for storing user data. Any crash reports or analytics are handled by trusted third-party services (such as Firebase) under their own security standards.</p>
+      <div class="highlight-box">
+        <p>Your data stays on your device. Uninstalling the app removes all locally stored data.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">05</span> Children's Privacy</h2>
+      <p>Our apps are not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will delete it immediately.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">06</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this page periodically. Continued use of our apps after changes are posted constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">07</span> Contact Us</h2>
+      <p>If you have any questions or concerns about this Privacy Policy, please reach out:</p>
+      <div class="contact-card" style="margin-top:24px;">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text">
+          <h3>Prasta Apps Studio</h3>
+          <p>For privacy inquiries, contact us via the Google Play developer page or through the support option within any of our apps.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <strong>Prasta Apps Studio</strong><br/>
+      <span>© 2025 Prasta Apps Studio. All rights reserved.</span>
+    </div>
+    <div class="footer-badge">PRIVACY POLICY</div>
+  </footer>
+
+</main>
+</body>
+</html>

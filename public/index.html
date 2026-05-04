@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prasta Apps Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #080D1E;
+      --blue:   #1AAFDF;
+      --orange: #F5A623;
+      --white:  #F0F4FF;
+      --muted:  #8AA0C0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Instrument Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── Background canvas ── */
+    #bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 10% 50%, rgba(26,175,223,.10) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 90% 30%, rgba(245,166,35,.06) 0%, transparent 70%),
+        var(--navy);
+    }
+
+    main { position: relative; z-index: 1; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 60px;
+      border-bottom: 1px solid rgba(26,175,223,.12);
+      backdrop-filter: blur(10px);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,13,30,.85);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; }
+    .logo-svg { width: 44px; height: 44px; }
+    .logo-text { font-family: 'Big Shoulders Display', sans-serif; font-size: 22px; letter-spacing: .04em; }
+    .logo-text span { color: var(--blue); font-size: 13px; display: block; letter-spacing: .18em; font-family: 'Instrument Sans', sans-serif; font-weight: 400; margin-top: -2px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 14px; letter-spacing: .06em; transition: color .2s; }
+    nav a:hover { color: var(--white); }
+    .nav-links { display: flex; gap: 40px; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 88vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 60px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(26,175,223,.10); border: 1px solid rgba(26,175,223,.25);
+      color: var(--blue); font-size: 12px; letter-spacing: .14em;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 36px;
+      width: fit-content;
+      animation: fadeUp .6s ease both;
+    }
+    .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+    h1 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(64px, 10vw, 130px);
+      line-height: .92; letter-spacing: -.01em;
+      animation: fadeUp .7s .1s ease both;
+    }
+    h1 .accent { color: var(--blue); }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px); color: var(--muted);
+      max-width: 540px; line-height: 1.7; margin-top: 28px;
+      animation: fadeUp .7s .2s ease both;
+    }
+    .hero-actions {
+      display: flex; gap: 16px; margin-top: 48px; flex-wrap: wrap;
+      animation: fadeUp .7s .3s ease both;
+    }
+    .btn {
+      padding: 14px 32px; border-radius: 8px; font-size: 15px;
+      font-family: 'Instrument Sans', sans-serif; font-weight: 600;
+      cursor: pointer; text-decoration: none; transition: all .2s;
+      letter-spacing: .04em;
+    }
+    .btn-primary {
+      background: var(--blue); color: var(--navy);
+      border: 2px solid var(--blue);
+    }
+    .btn-primary:hover { background: #22c4f8; border-color: #22c4f8; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 2px solid rgba(255,255,255,.18);
+    }
+    .btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px; max-width: 1200px; margin: 0 auto;
+      background: linear-gradient(90deg, transparent, rgba(26,175,223,.3), transparent);
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      max-width: 1200px; margin: 0 auto;
+      padding: 100px 60px;
+    }
+    .section-label {
+      font-size: 11px; letter-spacing: .2em; color: var(--orange);
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    h2 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(40px, 6vw, 72px); line-height: 1;
+      margin-bottom: 60px;
+    }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(26,175,223,.12);
+      border-radius: 16px; padding: 36px 32px;
+      transition: border-color .3s, transform .3s;
+    }
+    .card:hover { border-color: rgba(26,175,223,.4); transform: translateY(-4px); }
+    .card-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 20px;
+    }
+    .card h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 22px; margin-bottom: 10px; letter-spacing: .02em;
+    }
+    .card p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+
+    /* ── APPS STRIP ── */
+    .apps-strip {
+      background: rgba(26,175,223,.05);
+      border-top: 1px solid rgba(26,175,223,.12);
+      border-bottom: 1px solid rgba(26,175,223,.12);
+      padding: 60px;
+    }
+    .apps-inner { max-width: 1200px; margin: 0 auto; }
+    .apps-row {
+      display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px;
+    }
+    .app-pill {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 100px; padding: 10px 20px 10px 10px;
+      font-size: 14px; font-weight: 600;
+    }
+    .app-pill-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: 1200px; margin: 0 auto;
+      padding: 60px 60px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-left { font-size: 13px; color: var(--muted); line-height: 1.8; }
+    .footer-left strong { color: var(--white); }
+    .footer-badge {
+      font-size: 11px; letter-spacing: .12em; color: var(--muted);
+      border: 1px solid rgba(255,255,255,.1); padding: 6px 14px; border-radius: 100px;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      .hero, .features { padding: 60px 24px; }
+      .apps-strip { padding: 40px 24px; }
+      footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div id="bg"></div>
+<main>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo-wrap">
+      <!-- Inline R SVG logo -->
+      <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="44" height="44" rx="10" fill="#0D1628"/>
+        <rect x="10" y="8" width="8" height="28" rx="2" fill="#1AAFDF"/>
+        <path d="M18 8 Q34 8 34 18 Q34 28 18 28" stroke="#1AAFDF" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <rect x="11" y="14" width="14" height="8" rx="1" fill="#0D1628"/>
+        <line x1="21" y1="27" x2="34" y2="36" stroke="#F5A623" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        PRASTA
+        <span>APPS STUDIO</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#apps">Our Apps</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank">Google Play</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag">ANDROID APP DEVELOPER</div>
+    <h1>SMART<br/><span class="accent">APPS.</span><br/>SIMPLE<br/>SOLUTIONS.</h1>
+    <p class="hero-sub">Useful tools for everyday life — built fast, designed clean, and made to make your day a little easier.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank">View on Google Play</a>
+      <a class="btn btn-outline" href="#features">Learn More</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="section-label">WHY PRASTA</div>
+    <h2>BUILT WITH<br/>CARE.</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon" style="background:rgba(26,175,223,.15);">⚙️</div>
+        <h3>Useful Tools</h3>
+        <p>Every app solves a real, everyday problem — from calculators to file managers and beyond.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(61,220,132,.12);">⚡</div>
+        <h3>Fast & Lightweight</h3>
+        <p>No bloat. No unnecessary permissions. Just snappy, efficient apps that respect your device.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(167,139,250,.12);">🛡️</div>
+        <h3>Reliable & Secure</h3>
+        <p>Thoughtfully designed with your privacy and data security as a top priority.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(245,166,35,.12);">★</div>
+        <h3>Made with Care</h3>
+        <p>Every pixel and interaction is crafted with attention to detail and user experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- APPS -->
+  <section class="apps-strip" id="apps">
+    <div class="apps-inner">
+      <div class="section-label">OUR TOOLS</div>
+      <h2>SMART APPS<br/>FOR DAILY LIFE.</h2>
+      <div class="apps-row">
+        <div class="app-pill"><div class="app-pill-icon" style="background:#1A3A4A;">🧮</div>Calculator</div>
+        <div class="app-pill"><div class="app-pill-icon" style="background:#1A3A2A;">📐</div>Unit Converter</div>
+        <div class="app-pill"><div class="app-pill-icon" style="background:#2A2A1A;">📝</div>Note Pad</div>
+        <div class="app-pill"><div class="app-pill-icon" style="background:#2A1A2A;">📁</div>File Manager</div>
+        <div class="app-pill"><div class="app-pill-icon" style="background:#1A2A3A;">📷</div>QR Scanner</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <strong>Prasta Apps Studio</strong><br/>
+      Smart Apps. Simple Solutions. Better Everyday.<br/>
+      <span style="font-size:12px;">© 2025 Prasta Apps Studio. All rights reserved. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:var(--blue);text-decoration:none;">Privacy Policy</a></span>
+    </div>
+    <div class="footer-badge">GOOGLE PLAY DEVELOPER</div>
+  </footer>
+
+</main>
+</body>
+</html>
