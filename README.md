@@ -26,7 +26,7 @@ This repo keeps `app-ads.txt` at the **repository root** so `/app-ads.txt` is co
 ## Files
 
 - `public/index.html` — Main website
-- `app-ads.txt` — AdMob / IAB app-ads.txt (repository root)
+- `app-ads.txt` — AdMob / IAB app-ads.txt (repo root; `public/app-ads.txt` is a duplicate for Vercel “public root” deploys)
 - `robots.txt` — Allows AdMob / Google crawlers per [Google’s guidance](https://support.google.com/admob/answer/9776740)
 - `vercel.json` — Vercel rewrites + `app-ads.txt` headers
 
@@ -40,9 +40,21 @@ Google requests the file at **`https://<your-URL-prefix>/google00bee3b0d7d65ce9.
 
 ## AdMob Setup
 
-1. Deploy with **Vercel** (import repo; leave **Root Directory** as the repo root). After deploy, copy your production URL (e.g. `https://prasta-apps-studio.vercel.app`).
-2. In **Play Console → Grow users → Store presence → Store settings** → **Store listing contact details**, set **Website** to that same HTTPS origin (path optional for the listing; AdMob still uses **host** + `/app-ads.txt`).
-3. In AdMob → **Apps** → **app-ads.txt**, use **Check for updates**. Allow up to 24 hours after changing the Play listing.
-4. Test in a browser: `https://<your-exact-host>/app-ads.txt` must show one line: `google.com, pub-6125362256395053, DIRECT, f08c47fec0942fa0` (plain text, no HTML). In AdMob’s status screen, confirm the **crawled URL** matches what you tested.
+Checklist aligned with [Resolve issues with app-ads.txt](https://support.google.com/admob/answer/9776740):
 
-If the crawled URL is `https://gogushekar.github.io/app-ads.txt` but you only use GitHub **project** Pages, that URL will 404 until you add `app-ads.txt` to a **`gogushekar.github.io`** user site repo, switch the Play website to your **Vercel** host, or attach a **custom domain** to this project’s Pages.
+| Topic | In this repo |
+|--------|----------------|
+| File not found / wrong host | AdMob requests `https://<<hostname from Play>>/app-ads.txt` ([crawler rules](https://support.google.com/admob/answer/9363762)). GitHub **project** sites (`github.io/reponame`) still use hostname `github.io`, so the first check is often `https://<user>.github.io/app-ads.txt` (404 unless you use a **user** `username.github.io` repo, **Vercel**, or a **custom domain**). |
+| Developer website in Play | Must match where you can serve `/app-ads.txt`. **Play Console → Store presence → Store settings → Store listing contact details → Website.** |
+| `robots.txt` blocking crawlers | `robots.txt` allows `Google-adstxt`, `Mediapartners-Google`, `Googlebot`, `AdsBot-Google`, and `*` ([Google guidance](https://support.google.com/admob/answer/9776740)). |
+| Wrong format / wrong publisher ID | `app-ads.txt` is one line, ASCII, `google.com` + your `pub-…` + `DIRECT` + `f08c47fec0942fa0`. If AdMob still says “details don’t match”, open **AdMob → Apps → app-ads.txt → How to set up** and **paste the current snippet** from there (IDs can change). |
+| Crawler “wrong link” | In AdMob’s **app-ads.txt** status, read the **exact crawled URL**. If it’s not where your file returns 200, add a **redirect** on that host to your real `app-ads.txt`, or change the Play **Website** to a host where `/app-ads.txt` is already correct. |
+
+Steps:
+
+1. Deploy with **Vercel** (import repo; **Root Directory** = repo root). Use your production URL (e.g. `https://<project>.vercel.app`).
+2. Set the Play **Website** to that **same HTTPS origin** (recommended fix if you were on `github.io/reponame` only).
+3. Confirm in a browser: `https://<that-host>/app-ads.txt` → one plain-text line (no HTML shell).
+4. AdMob → **Apps** → **app-ads.txt** → **Check for updates**; allow up to **24 hours** after Play listing changes ([Google note](https://support.google.com/admob/answer/9776740)).
+
+`app-ads.txt` exists at the **repo root** (and a copy under **`public/`** for setups that deploy only the `public` folder). Keep both lines identical if you edit the publisher row.

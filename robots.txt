@@ -1,4 +1,5 @@
-# AdMob / ads.txt crawlers (see https://support.google.com/admob/answer/9776740)
+# app-ads.txt / ads.txt crawlers — https://support.google.com/admob/answer/9776740
+# Google recommends allowing Google-adstxt (empty Disallow = allow all paths).
 User-agent: Google-adstxt
 Disallow:
 
@@ -6,4 +7,10 @@ User-agent: Mediapartners-Google
 Disallow:
 
 User-agent: Googlebot
+Disallow:
+
+User-agent: AdsBot-Google
+Disallow:
+
+User-agent: *
 Disallow:
