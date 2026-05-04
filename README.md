@@ -30,6 +30,14 @@ This repo keeps `app-ads.txt` at the **repository root** so `/app-ads.txt` is co
 - `robots.txt` — Allows AdMob / Google crawlers per [Google’s guidance](https://support.google.com/admob/answer/9776740)
 - `vercel.json` — Vercel rewrites + `app-ads.txt` headers
 
+## Google Search Console (HTML file verification)
+
+Google requests the file at **`https://<your-URL-prefix>/google00bee3b0d7d65ce9.html`**. The **URL prefix** in Search Console must match where this site is hosted.
+
+- **GitHub Pages (this repo):** use prefix `https://gogushekar.github.io/PrastaAppsStudio` (include the repo path). If you use only `https://gogushekar.github.io`, Google looks at `https://gogushekar.github.io/google00bee3b0d7d65ce9.html`, which this project does **not** serve.
+- **Vercel:** use your deployment origin, e.g. `https://your-project.vercel.app`.
+- This repo includes **`.nojekyll`** so GitHub Pages does not run Jekyll on these files.
+
 ## AdMob Setup
 
 1. Deploy with **Vercel** (import repo; leave **Root Directory** as the repo root). After deploy, copy your production URL (e.g. `https://prasta-apps-studio.vercel.app`).
