@@ -10,8 +10,7 @@
   ],
   "rewrites": [
     { "source": "/", "destination": "/public/index.html" },
-    { "source": "/privacy-policy.html", "destination": "/public/privacy-policy.html" },
-    { "source": "/tictac-clash-privacy.html", "destination": "/public/tictac-clash-privacy.html" }
+    { "source": "/privacy-policy.html", "destination": "/public/privacy-policy.html" }
   ],
   "headers": [
     {
