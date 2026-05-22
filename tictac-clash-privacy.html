@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Tic Tac Clash | Prasta Apps Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #080D1E;
+      --blue:   #1AAFDF;
+      --orange: #F5A623;
+      --white:  #F0F4FF;
+      --muted:  #8AA0C0;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Instrument Sans', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    #bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 40% at 10% 20%, rgba(26,175,223,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 30% at 90% 80%, rgba(245,166,35,.05) 0%, transparent 70%),
+        var(--navy);
+    }
+
+    main { position: relative; z-index: 1; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 60px;
+      border-bottom: 1px solid rgba(26,175,223,.12);
+      backdrop-filter: blur(10px);
+      background: rgba(8,13,30,.85);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-svg { width: 44px; height: 44px; }
+    .logo-text { font-family: 'Big Shoulders Display', sans-serif; font-size: 22px; letter-spacing: .04em; color: var(--white); }
+    .logo-text span { color: var(--blue); font-size: 13px; display: block; letter-spacing: .18em; font-family: 'Instrument Sans', sans-serif; font-weight: 400; margin-top: -2px; }
+    .back-link {
+      color: var(--muted); text-decoration: none; font-size: 14px;
+      letter-spacing: .06em; transition: color .2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .back-link:hover { color: var(--white); }
+
+    .page-hero {
+      padding: 80px 60px 60px;
+      max-width: 860px; margin: 0 auto;
+      animation: fadeUp .6s ease both;
+    }
+    .page-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,166,35,.10); border: 1px solid rgba(245,166,35,.25);
+      color: var(--orange); font-size: 11px; letter-spacing: .14em;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
+      width: fit-content; text-transform: uppercase;
+    }
+    h1 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: .95; letter-spacing: -.01em;
+      margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--blue); }
+    .meta {
+      font-size: 14px; color: var(--muted); letter-spacing: .04em;
+      margin-top: 8px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .meta strong { color: var(--white); font-weight: 600; }
+
+    .divider {
+      height: 1px; max-width: 860px; margin: 0 auto 0;
+      background: linear-gradient(90deg, transparent, rgba(26,175,223,.3), transparent);
+    }
+
+    .content {
+      max-width: 860px; margin: 0 auto;
+      padding: 60px 60px 100px;
+      animation: fadeUp .7s .1s ease both;
+    }
+
+    .section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    h2 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(24px, 3vw, 34px);
+      letter-spacing: .02em; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    h2 .num {
+      font-size: 13px; color: var(--blue); letter-spacing: .12em;
+      background: rgba(26,175,223,.10); border: 1px solid rgba(26,175,223,.2);
+      padding: 3px 10px; border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif; font-weight: 600;
+    }
+
+    p { color: var(--muted); margin-bottom: 16px; font-size: 16px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      color: var(--muted); padding-left: 20px; font-size: 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      margin-top: 12px;
+    }
+    ul li::marker { color: var(--blue); }
+
+    .highlight-box {
+      background: rgba(26,175,223,.06);
+      border: 1px solid rgba(26,175,223,.18);
+      border-left: 3px solid var(--blue);
+      border-radius: 10px; padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .highlight-box p { margin: 0; color: var(--white); font-size: 15px; }
+
+    a.inline { color: var(--blue); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
+
+    .contact-card {
+      background: rgba(245,166,35,.06);
+      border: 1px solid rgba(245,166,35,.2);
+      border-radius: 16px; padding: 32px;
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    }
+    .contact-icon { font-size: 36px; }
+    .contact-text h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 22px; margin-bottom: 6px;
+    }
+    .contact-text p { margin: 0; font-size: 15px; }
+
+    footer {
+      max-width: 860px; margin: 0 auto;
+      padding: 40px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-left { font-size: 13px; color: var(--muted); }
+    .footer-left strong { color: var(--white); }
+    .footer-badge {
+      font-size: 11px; letter-spacing: .12em; color: var(--muted);
+      border: 1px solid rgba(255,255,255,.1); padding: 6px 14px; border-radius: 100px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 20px 24px; }
+      .page-hero, .content { padding-left: 24px; padding-right: 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div id="bg"></div>
+<main>
+
+  <nav>
+    <a class="logo-wrap" href="index.html">
+      <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="44" height="44" rx="10" fill="#0D1628"/>
+        <rect x="10" y="8" width="8" height="28" rx="2" fill="#1AAFDF"/>
+        <path d="M18 8 Q34 8 34 18 Q34 28 18 28" stroke="#1AAFDF" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <rect x="11" y="14" width="14" height="8" rx="1" fill="#0D1628"/>
+        <line x1="21" y1="27" x2="34" y2="36" stroke="#F5A623" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        PRASTA
+        <span>APPS STUDIO</span>
+      </div>
+    </a>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-tag">Tic Tac Clash</div>
+    <h1>PRIVACY<br/><span class="accent">POLICY.</span></h1>
+    <p class="meta">
+      <span><strong>App:</strong> Tic Tac Clash</span>
+      <span><strong>Developer:</strong> Prasta Apps Studio</span>
+      <span><strong>Last updated:</strong> May 5, 2026</span>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="content">
+
+    <div class="section">
+      <h2><span class="num">01</span> Overview</h2>
+      <div class="highlight-box">
+        <p>Tic Tac Clash is an offline tic-tac-toe game. We respect your privacy and designed the app to work without collecting personal information.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">02</span> Information We Collect</h2>
+      <p>We do <strong style="color:var(--white)">not</strong> collect, store, or transmit personal information. The app does not require an account and does not connect to the internet for gameplay.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">03</span> Information Stored on Your Device</h2>
+      <p>The app saves local game statistics (wins and draws for X, O, and draws) using your device’s storage. This data stays on your device and is not sent to us or third parties.</p>
+      <div class="highlight-box">
+        <p>Uninstalling the app removes locally stored statistics from your device.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">04</span> Permissions</h2>
+      <p>Tic Tac Clash may request the following permission:</p>
+      <ul>
+        <li><strong style="color:var(--white)">Vibration</strong> — Used for haptic feedback when you tap cells or win a game.</li>
+      </ul>
+      <p style="margin-top:16px;">We do not use this permission to collect personal data.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">05</span> Third-Party Services</h2>
+      <p>The app does not use analytics, advertising, or third-party data collection services.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">06</span> Children</h2>
+      <p>The app is suitable for general audiences and does not knowingly collect information from anyone, including children under 13.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">07</span> Changes</h2>
+      <p>We may update this policy from time to time. The “Last updated” date at the top of this page will change when we do. Continued use of the app after changes are posted means you accept the updated policy.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">08</span> Contact</h2>
+      <p>If you have questions about this privacy policy or Tic Tac Clash, please contact us:</p>
+      <div class="contact-card" style="margin-top:24px;">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text">
+          <h3>Prasta Apps Studio</h3>
+          <p>Reach us through the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or the support option in the app listing on Google Play.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <strong>Prasta Apps Studio</strong><br/>
+      <span>© 2026 Prasta Apps Studio. All rights reserved.</span>
+    </div>
+    <div class="footer-badge">TIC TAC CLASH</div>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -1,10 +1,16 @@
 {
   "version": 2,
   "public": true,
+  "redirects": [
+    {
+      "source": "/tictac-clash-privacy",
+      "destination": "/tictac-clash-privacy.html",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/public/index.html" },
     { "source": "/privacy-policy.html", "destination": "/public/privacy-policy.html" },
-    { "source": "/tictac-clash-privacy", "destination": "/public/tictac-clash-privacy.html" },
     { "source": "/tictac-clash-privacy.html", "destination": "/public/tictac-clash-privacy.html" }
   ],
   "headers": [
