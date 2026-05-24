@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy — MyNotes (Quick &amp; Simple) | Prasta Apps Studio</title>
+  <title>Privacy Policy — MyNotes (QuickSimple) | Prasta Apps Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
@@ -182,6 +182,7 @@
       font-size: 14px; color: var(--muted);
       background: rgba(255,255,255,.03);
       border-radius: 10px; padding: 16px 20px;
+      margin-top: 12px;
     }
 
     footer {
@@ -234,13 +235,12 @@
   </nav>
 
   <div class="page-hero">
-    <div class="page-tag">MyNotes · Quick &amp; Simple</div>
+    <div class="page-tag">MyNotes · QuickSimple</div>
     <h1>PRIVACY<br/><span class="accent">POLICY.</span></h1>
     <p class="meta">
-      <span><strong>App:</strong> MyNotes — Quick &amp; Simple</span>
-      <span><strong>Package:</strong> <code>com.mynotes.quicksimple</code></span>
-      <span><strong>Developer:</strong> Prasta Apps Studio</span>
       <span><strong>Last updated:</strong> May 24, 2026</span>
+      <span><strong>Package (release):</strong> <code>com.mynotes.quicksimple</code></span>
+      <span><strong>Package (debug):</strong> <code>com.mynotes.quicksimple.debug</code></span>
     </p>
   </div>
 
@@ -249,12 +249,13 @@
   <div class="content">
 
     <div class="section">
-      <p>This Privacy Policy describes how <strong style="color:var(--white)">MyNotes</strong> (the Android application packaged as <code>com.mynotes.quicksimple</code>; debug builds may use <code>com.mynotes.quicksimple.debug</code>) (“App”, “we”, “us”) collects, uses, stores, and shares information when you use the App.</p>
+      <p>This Privacy Policy describes how <strong style="color:var(--white)">MyNotes</strong> (“<strong style="color:var(--white)">MyNotes</strong>”, the <strong style="color:var(--white)">App</strong>) collects, uses, stores, and shares information when you use it on Android.</p>
+      <p>Throughout this Policy, “<strong style="color:var(--white)">we</strong>”, “<strong style="color:var(--white)">us</strong>”, and “<strong style="color:var(--white)">our</strong>” refer to <strong style="color:var(--white)">Prasta Apps Studio</strong>, the operator of MyNotes.</p>
       <div class="contact-card">
         <div class="contact-icon">✉️</div>
         <div class="contact-text">
-          <h3>Contact</h3>
-          <p><strong style="color:var(--white)">Prasta Apps Studio</strong> — privacy inquiries via the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or the support option on the MyNotes Play listing.</p>
+          <h3>Contact for privacy requests</h3>
+          <p><strong style="color:var(--white)">Prasta Apps Studio</strong> — reach us via the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or the support option on the MyNotes listing on Google Play.</p>
         </div>
       </div>
     </div>
@@ -264,9 +265,12 @@
       <div class="highlight-box">
         <ul>
           <li><strong>Notes and notebooks are stored primarily on your device.</strong></li>
-          <li>If you <strong>choose to sign in with Google</strong>, we sync an encrypted-in-transit snapshot of your notebooks and notes to <strong>Google Firebase / Firestore</strong> associated with <strong>your Google account</strong>, for <strong>backup and restore</strong>.</li>
-          <li>The App uses <strong>Google AdMob</strong> to show advertisements.</li>
-          <li>Firebase may provide <strong>crash, diagnostic, and analytics-related services</strong> depending on SDK configuration.</li>
+          <li>If you <strong>choose to sign in with Google</strong>, the App may sync notebooks and notes to <strong>Google Firebase (Firestore)</strong> for <strong>optional backup and restore</strong>, tied to your Google account via <strong>Firebase Authentication</strong>.</li>
+          <li><strong>Advertising (free tier):</strong> the App uses <strong>Google AdMob</strong>, including <strong>native-style placements</strong> while you browse notes.</li>
+          <li><strong>Optional rewarded ads:</strong> you can start a <strong>rewarded interstitial</strong> (full-screen) only from <strong>Menu (☰) → Ads &amp; support → Watch ad</strong> after an on-screen disclosure with <strong>Continue</strong> / <strong>Skip</strong>. Watching is <strong>not required</strong> for note-taking.</li>
+          <li><strong>Optional one-time purchase (ad-free):</strong> the App offers <strong>Remove ads</strong> through <strong>Google Play Billing</strong> (<code>com.android.vending.BILLING</code>). The in-product ID is <code>remove_ads</code> (a <strong>non-consumable</strong>, one-time item; approximate list price often around <strong>US $4.99</strong>—<strong>Google Play shows the exact price for your currency/region</strong>). When Play confirms entitlement, <strong>native ads and rewarded support ads are disabled</strong> until entitlement changes (e.g. refund/revocation by Play <strong>or</strong> clearing app storage—see §1.4).</li>
+          <li><strong>Payments</strong> for that purchase are <strong>processed by Google</strong>; we <strong>do not</strong> receive your full card or bank credentials.</li>
+          <li><strong>Firebase Analytics</strong> may be active per our SDK configuration—see the <a class="inline" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a> for categories of data Firebase products may collect.</li>
         </ul>
       </div>
     </div>
@@ -274,13 +278,17 @@
     <div class="section">
       <h2><span class="num">01</span> Information the App processes</h2>
 
-      <h3>1.1 Information you enter in the App</h3>
+      <h3>1.1 Information you enter or create</h3>
       <table class="data-table">
         <thead><tr><th>Data</th><th>Typical use</th></tr></thead>
         <tbody>
           <tr>
-            <td><strong>Note content</strong> (titles, bodies, checklist text, reminders, notebook names, styling metadata)</td>
-            <td>Core note-taking functionality, stored locally; optional cloud backup and restore</td>
+            <td><strong>Note content</strong> (titles, bodies, checklist text, reminders metadata, notebook names, styling/metadata)</td>
+            <td>Note-taking, search, reminders, trash/archive</td>
+          </tr>
+          <tr>
+            <td><strong>Account choice</strong></td>
+            <td>Optional Google Sign-In for cloud backup</td>
           </tr>
         </tbody>
       </table>
@@ -290,156 +298,177 @@
         <thead><tr><th>Data</th><th>Why</th></tr></thead>
         <tbody>
           <tr>
-            <td><strong>Firebase installation / app instance identifiers</strong> used by Firebase SDKs</td>
-            <td>App configuration and Firebase services (Analytics, Messaging if enabled, Installation IDs, etc.—per Firebase documentation)</td>
+            <td><strong>Identifiers and telemetry from Firebase / Google Play Services</strong></td>
+            <td>Firebase configuration, Authentication, Analytics (if enabled), and installation/app instance identifiers as described by Google</td>
           </tr>
           <tr>
-            <td><strong>Advertising identifiers and ad-related telemetry</strong></td>
-            <td>Delivering and measuring ads through <strong>Google AdMob</strong> (subject to Google’s policies and your device settings)</td>
+            <td><strong>Advertising-related identifiers and telemetry</strong></td>
+            <td>Deliver and measure ads through <strong>Google Mobile Ads / AdMob</strong>, only when ads are enabled (typically <strong>until</strong> <strong>Remove ads</strong> is active for your Play account/device install as described below)</td>
           </tr>
           <tr>
-            <td><strong>Technical logs/diagnostics on your device</strong></td>
-            <td>Debugging and security (mostly visible to developers via Android Studio/logcat—not sent to our servers unless a third-party SDK does so according to its own policy, e.g. Google/Firebase)</td>
+            <td><strong>Purchase / entitlement signalling from Google Play Billing</strong></td>
+            <td>The App asks Play whether <code>remove_ads</code> is owned and acknowledged so it can honour ad-free mode (see §1.4)</td>
+          </tr>
+          <tr>
+            <td><strong>Technical logs on your device</strong></td>
+            <td>Debugging when you share logs—third-party SDKs may log according to <strong>their</strong> policies</td>
           </tr>
         </tbody>
       </table>
-      <p>Exact categories depend on Firebase/Play Services SDK versions—see the <a class="inline" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Firebase Privacy Policy</a> and <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy &amp; Terms</a>.</p>
+      <p>Exact categories depend on SDK versions. See the <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and Firebase disclosures.</p>
 
-      <h3>1.3 Optional cloud backup (Google Sign-In)</h3>
-      <p>If you tap <strong style="color:var(--white)">sign in / cloud backup</strong>:</p>
+      <h3>1.3 Optional cloud backup (Google Sign-In + Firestore)</h3>
+      <p>If you sign in:</p>
       <ul>
-        <li>Firebase <strong>Authentication</strong> may process identifiers linked to <strong>your Google account</strong> (e.g. account email/UID shown in the SDK) solely to authenticate you.</li>
-        <li><strong>Cloud Firestore</strong> stores <strong>documents representing your notebooks and notes</strong> under a path keyed to <strong>your Firebase user ID</strong>, so backup/restore works across installs.</li>
+        <li><strong>Firebase Authentication</strong> may process identifiers associated with <strong>your Google account</strong> (such as UID and optionally email for display inside the App) solely to authenticate you.</li>
+        <li><strong>Cloud Firestore</strong> may store structured <strong>documents describing your notebooks and notes</strong> keyed to <strong>your Firebase user ID</strong> so backups can be restored across installs.</li>
       </ul>
-      <p>Signing out stops new authenticated access from <strong>this installation</strong> until you sign in again. Deleting documents in Firebase follows the logic <strong>you trigger in the App</strong> (for example restore from backup, manual backup behaviour, or permanent delete flows as implemented).</p>
+      <p>Signing out on the device stops new authenticated access from <strong>this installation</strong> until you sign in again. <strong>Permanent delete</strong> and <strong>empty trash</strong> flows generally remove matching documents from Firebase when <strong>you are signed in</strong>.</p>
 
-      <h3>1.4 Local storage and backups you control</h3>
-      <p>You may <strong style="color:var(--white)">export/import</strong> notes (e.g. as files). Files you export are <strong style="color:var(--white)">controlled by you</strong> and your chosen sharing targets (Downloads, messaging apps, USB, etc.). We do not receive those exports unless <strong style="color:var(--white)">you choose</strong> to upload them elsewhere.</p>
+      <h3>1.4 In-app purchases — Remove ads (<code>remove_ads</code>)</h3>
+      <p>The App integrates <strong style="color:var(--white)">Google Play Billing Library</strong>:</p>
+      <ul>
+        <li><strong>What you buy:</strong> a <strong>single, one-time (non-renewing, non-consumable)</strong> SKU with product ID <code>remove_ads</code> to unlock <strong>ad-free</strong> mode: <strong>native AdMob placements and the voluntary rewarded “Watch ad” flow do not appear</strong> once Play confirms the purchase (<strong>subject to revocation/refund handled by Play</strong>).</li>
+        <li><strong>What we don’t promise here:</strong> wording on your <strong>actual Play Console product title/description</strong> controls marketing; this Policy summarizes technical behaviour. Subscriptions <strong>other than</strong> <code>remove_ads</code> are <strong>not</strong> offered in the current app version as described here.</li>
+        <li><strong>Payment details:</strong> handled <strong>by Google</strong> under <strong>Google Play / Google Payments</strong> terms; we receive <strong>confirmation of entitlement</strong> from the Billing API, <strong>not</strong> your full payment card number.</li>
+        <li><strong>Local cache:</strong> whether you are treated as <strong>ad-free</strong> is mirrored in <strong>private app preferences</strong> (<code>SharedPreferences</code>) <strong>on your device</strong> for responsiveness; that flag is updated when Billing reports changes (for example restore on launch/resume via <strong>Restore purchases</strong>). <strong>Clearing app data</strong> may reset the local cache; <strong>opening the App while online</strong> reconnects Billing so Play can reload ownership for the signed-in Play account.</li>
+        <li><strong>Refunds / chargebacks:</strong> if Google revokes entitlement, ads may resume after the App syncs—see <a class="inline" href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play Help — refunds</a> and your region’s purchaser rules.</li>
+      </ul>
+
+      <h3>1.5 Exports and files you control</h3>
+      <p>You may <strong style="color:var(--white)">export</strong> or <strong style="color:var(--white)">import</strong> notes as files <strong style="color:var(--white)">you choose</strong> to save or share. Those files leave the App <strong style="color:var(--white)">under your control</strong> (Downloads, messaging apps, cloud folders, USB, etc.). We do <strong style="color:var(--white)">not</strong> receive them unless <strong style="color:var(--white)">you</strong> send them to us externally.</p>
     </div>
 
     <div class="section">
       <h2><span class="num">02</span> How we use information</h2>
-      <p>We use the above information solely to:</p>
+      <p>We use information <strong style="color:var(--white)">only</strong>:</p>
       <ul>
-        <li>Provide <strong style="color:var(--white)">note-taking, reminders, notebooks, trash/archive</strong>, search, templates, export/import</li>
-        <li>Optionally provide <strong style="color:var(--white)">authenticated cloud backup/restore</strong> (Firebase Auth + Firestore)</li>
-        <li>Show <strong style="color:var(--white)">advertisements</strong> (AdMob) and measure their performance subject to policies</li>
-        <li>Operate and improve Firebase-related SDK features as configured</li>
+        <li>To provide <strong style="color:var(--white)">notes, notebooks, reminders, archive/trash</strong>, search/templates (as implemented), and <strong style="color:var(--white)">export/import</strong></li>
+        <li>To offer <strong style="color:var(--white)">optional</strong> cloud backup / restore (<strong>Firebase</strong>, when you authenticate)</li>
+        <li>To show <strong style="color:var(--white)">ads</strong> (<strong>AdMob</strong>) when <code>remove_ads</code> is <strong>not</strong> currently recognized for your install, measure ads where permitted, and honour <strong style="color:var(--white)">consent/CMP or age-based restrictions</strong> where we configure supported SDK paths—see <a class="inline" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob programme policies</a></li>
+        <li>To <strong style="color:var(--white)">deliver and remember</strong> <code>remove_ads</code> <strong style="color:var(--white)">entitlement</strong> via <strong style="color:var(--white)">Google Play Billing</strong> plus <strong style="color:var(--white)">local prefs</strong> aligned with Play</li>
+        <li>To operate/improve Firebase-related tooling as configured (<strong>Analytics</strong>, etc.)</li>
       </ul>
-      <p>We <strong style="color:var(--white)">do not sell your personal note content</strong> as a product. Third-party ad and analytics frameworks may collect data under <strong style="color:var(--white)">their own</strong> policies—see section 04.</p>
+      <p>We <strong style="color:var(--white)">do not sell your note text</strong> as a product. Advertising and analytics partners may process certain data under <strong style="color:var(--white)">their own</strong> notices—see section 04.</p>
     </div>
 
     <div class="section">
       <h2><span class="num">03</span> Legal bases (EEA / UK users)</h2>
-      <p>Where GDPR/UK GDPR applies, we rely on:</p>
+      <p>Where GDPR / UK GDPR applies, we rely on:</p>
       <ul>
-        <li><strong style="color:var(--white)">Contract / steps prior to contract</strong> — providing the note features you requested</li>
-        <li><strong style="color:var(--white)">Legitimate interests</strong> — secure operation, preventing abuse where proportionate, basic product analytics tied to Firebase as configured, ad-funded free tier (each subject to overriding rights and objections where applicable)</li>
-        <li><strong style="color:var(--white)">Consent</strong> — where platforms or laws require consent (e.g. certain ads/personalisation settings on your device)</li>
+        <li><strong style="color:var(--white)">Contract / steps prior to contract</strong> — providing the App features you requested, including <strong style="color:var(--white)">fulfilment</strong> of <code>remove_ads</code> through Play Billing where applicable</li>
+        <li><strong style="color:var(--white)">Legitimate interests</strong> — securing the App, fraud/abuse mitigation where proportionate, product improvement supported by aggregated or minimised telemetry—you may have rights to object where applicable by law</li>
+        <li><strong style="color:var(--white)">Consent</strong> — where consent is required under platform rules or applicable law (for example certain ad personalisation scenarios on device or consent frameworks when used)</li>
       </ul>
     </div>
 
     <div class="section">
       <h2><span class="num">04</span> Third-party services</h2>
-      <p>Processing may involve:</p>
       <table class="data-table">
-        <thead><tr><th>Provider</th><th>Purpose</th><th>Policy</th></tr></thead>
+        <thead><tr><th>Provider</th><th>Purpose</th><th>Further reading</th></tr></thead>
         <tbody>
           <tr>
-            <td><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Analytics as enabled)</td>
-            <td>Optional account sign-in and cloud datastore; Firebase product telemetry</td>
+            <td><strong>Google Firebase</strong> (Auth, Cloud Firestore, Analytics as configured)</td>
+            <td>Optional backup; telemetry</td>
             <td><a class="inline" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
           </tr>
           <tr>
-            <td><strong>Google Ads / Google Mobile Ads (AdMob)</strong></td>
-            <td>Advertising</td>
-            <td><a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a> · <a class="inline" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob privacy</a></td>
+            <td><strong>Google Mobile Ads (AdMob)</strong></td>
+            <td>Native ads when not ad-free; optional rewarded ads when started by you</td>
+            <td><a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a> · <a class="inline" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob policies</a></td>
           </tr>
           <tr>
-            <td><strong>Google Play / Android system services</strong></td>
-            <td>App distribution / platform APIs</td>
-            <td>Platform provider policies</td>
+            <td><strong>Google Play / Play Billing</strong></td>
+            <td>App distribution; <code>remove_ads</code> one-time purchase; payment processing <strong>by Google</strong></td>
+            <td><a class="inline" href="https://play.google.com/intl/ALL_en/about/play-terms/" target="_blank" rel="noopener">Play Terms</a></td>
+          </tr>
+          <tr>
+            <td><strong>Google Play Services / Android</strong></td>
+            <td>APIs used by Firebase, Ads, Sign-In, Billing</td>
+            <td>Platform / manufacturer policies</td>
           </tr>
         </tbody>
       </table>
-      <p>Firebase and Google Ads may operate as processors under your agreement with Google, or exercise independent roles depending on jurisdiction—consult Google disclosures.</p>
+      <p>Those services may act as <strong style="color:var(--white)">processors</strong> in some relationships and as <strong style="color:var(--white)">independent controllers</strong> in others, depending on context and law—see each provider’s documentation.</p>
     </div>
 
     <div class="section">
       <h2><span class="num">05</span> Data retention</h2>
       <ul>
-        <li><strong style="color:var(--white)">On device:</strong> persists until <strong style="color:var(--white)">you uninstall the App</strong>, <strong style="color:var(--white)">clear storage</strong>, or delete data inside the App. Purge-after-period rules implemented in-app (for example automated trash pruning) affect <strong style="color:var(--white)">device</strong> retention only unless changes are synced to cloud per your flows.</li>
-        <li><strong style="color:var(--white)">In Firebase (if you use backup):</strong> notebook/note documents persist until overwritten, deleted according to App actions, or you contact us to request account/data deletion where applicable.</li>
+        <li><strong style="color:var(--white)">On device:</strong> notes and preferences (including <code>remove_ads</code> cache) persist until you <strong style="color:var(--white)">uninstall</strong>, <strong style="color:var(--white)">clear app data</strong>, or delete content in the App, subject to trash / retention rules in the App.</li>
+        <li><strong style="color:var(--white)">In Firebase (if you use backup):</strong> until overwritten by backups, deleted through App flows that remove cloud copies, or your Google / Firebase relationship changes as applicable.</li>
+        <li><strong style="color:var(--white)">With Google Ads / Firebase / Play:</strong> retention is largely governed <strong style="color:var(--white)">by Google</strong> per their policies and your account controls.</li>
       </ul>
     </div>
 
     <div class="section">
       <h2><span class="num">06</span> Children</h2>
-      <p>The App is <strong style="color:var(--white)">not directed to children under 13</strong> (or the minimum age defined in your country). If you discover a child supplied personal information, contact us—we will assist with deletion consistent with applicable law.</p>
+      <p>The App is <strong style="color:var(--white)">not directed to children under 13</strong> (or the minimum age required in your jurisdiction for unsupervised consent to online services). If you believe a child has supplied personal information that should not be retained, contact us via the Play listing—we will help as required by applicable law.</p>
     </div>
 
     <div class="section">
       <h2><span class="num">07</span> Security</h2>
-      <p>We use <strong style="color:var(--white)">HTTPS/TLS-protected Google/Firebase APIs</strong> provided by Firebase SDKs. <strong style="color:var(--white)">No backend run by us receives your notes</strong>, except indirectly through Firebase under Google’s Terms. Perfect security does not exist—protect device access and your Google/Firebase account.</p>
+      <p>We rely on <strong style="color:var(--white)">industry-standard transport security (HTTPS/TLS)</strong> for Google APIs that the Firebase, Ads, and Play Billing SDKs use. <strong style="color:var(--white)">Your note content isn’t routed through a bespoke “MyNotes server”</strong> we operate—but it may be stored in <strong style="color:var(--white)">Firestore</strong> when you opt in to backup. <strong style="color:var(--white)">No method is 100% secure</strong>; protect your device, lock screen, and Google account.</p>
     </div>
 
     <div class="section">
       <h2><span class="num">08</span> International transfers</h2>
-      <p>Google may process Firebase/Ads data in <strong style="color:var(--white)">multiple countries</strong>. See the <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and Firebase data processing disclosures.</p>
+      <p>Google may process data in <strong style="color:var(--white)">multiple countries</strong>. See the <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and Firebase disclosures.</p>
     </div>
 
     <div class="section">
       <h2><span class="num">09</span> Your choices</h2>
       <p>You can:</p>
       <ul>
-        <li><strong style="color:var(--white)">Decline cloud sign-in</strong> — backups to Google won’t authenticate as you (offline/local use retained).</li>
-        <li><strong style="color:var(--white)">Sign out</strong> in the App.</li>
-        <li><strong style="color:var(--white)">Reset ad personalization</strong> via Google / device Settings (see Google Help).</li>
-        <li><strong style="color:var(--white)">Request Firebase/Google account data, export, or deletion</strong> per Google tooling where applicable, or contact us via the Play listing.</li>
+        <li>Use the App <strong style="color:var(--white)">without</strong> Google Sign-In (local note-keeping; <strong style="color:var(--white)">ads</strong> may still show unless <code>remove_ads</code> is active for your Play account on this install).</li>
+        <li><strong style="color:var(--white)">Sign out</strong> of cloud backup in the App.</li>
+        <li><strong style="color:var(--white)">Buy <code>remove_ads</code> once</strong> (when listed in your region) to disable <strong style="color:var(--white)">native</strong> and <strong style="color:var(--white)">voluntary rewarded</strong> ads as implemented, or <strong style="color:var(--white)">decline</strong> and keep the free ad-supported experience.</li>
+        <li>Tap <strong style="color:var(--white)">Restore purchases</strong> in <strong style="color:var(--white)">Menu (☰) → Ads &amp; support</strong> (or equivalent) to re-sync <code>remove_ads</code> with Google Play after reinstall or device change <strong style="color:var(--white)">for the same Play account</strong>.</li>
+        <li>Adjust <strong style="color:var(--white)">Google ad personalisation</strong>, reset advertising ID where available, or use platform settings that limit ad tracking—see Google Help for your Android version / account.</li>
+        <li><strong style="color:var(--white)">Skip rewarded ads</strong>: use <strong style="color:var(--white)">Skip</strong> on the disclosure before an ad plays, or do not tap <strong style="color:var(--white)">Watch ad</strong>.</li>
+        <li>Manage <strong style="color:var(--white)">Play orders and refunds</strong> in <a class="inline" href="https://play.google.com/store/account" target="_blank" rel="noopener">Google Play</a>.</li>
+        <li>Request <strong style="color:var(--white)">Firebase / Google account</strong> export or deletion via <a class="inline" href="https://myaccount.google.com/" target="_blank" rel="noopener">Google Account tools</a>, or contact us via the Play listing.</li>
       </ul>
     </div>
 
     <div class="section">
-      <h2><span class="num">10</span> Permissions (Android)</h2>
-      <p>The App may request or use capabilities such as:</p>
+      <h2><span class="num">10</span> Permissions and Play capabilities (Android)</h2>
       <table class="data-table">
-        <thead><tr><th>Permission / capability</th><th>Why</th></tr></thead>
+        <thead><tr><th>Permission / declaration</th><th>Why</th></tr></thead>
         <tbody>
           <tr>
-            <td><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code></td>
-            <td>Network &amp; ads, Firebase, optional backups</td>
+            <td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td>
+            <td>Network: ads, Firebase, optional backup, Billing</td>
+          </tr>
+          <tr>
+            <td><code>com.android.vending.BILLING</code></td>
+            <td><strong>Google Play Billing</strong> for <code>remove_ads</code> (no access to contacts or SMS)</td>
           </tr>
           <tr>
             <td><code>POST_NOTIFICATIONS</code></td>
-            <td>Note reminders/notifications (Android 13+)</td>
+            <td>Reminders / notifications (Android 13+ where runtime permission applies)</td>
           </tr>
           <tr>
-            <td><code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code></td>
-            <td>Exact-time reminders where supported</td>
+            <td><code>SCHEDULE_EXACT_ALARM</code>, <code>USE_EXACT_ALARM</code></td>
+            <td>Exact-time reminders where the OS allows</td>
           </tr>
           <tr>
             <td><code>VIBRATE</code></td>
-            <td>Notification/reminder cues</td>
+            <td>Gentle notification/reminder cues</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="section">
-      <h2><span class="num">11</span> Changes</h2>
-      <p>We may update this Policy. Material changes will be reflected by an updated “Last updated” date on this page and, where appropriate, in the Google Play listing or in-app notice.</p>
+      <h2><span class="num">11</span> Changes to this Policy</h2>
+      <p>We may revise this Privacy Policy when features change (for example <strong style="color:var(--white)">billing or ad formats</strong>). When we do, we will update the <strong style="color:var(--white)">“Last updated”</strong> date on this page, update the Google Play listing link where appropriate, and show a short in-app notice for material changes when we can.</p>
     </div>
 
     <div class="section">
-      <h2><span class="num">12</span> Contact</h2>
-      <p>Questions about this Privacy Policy or MyNotes data practices:</p>
-      <div class="contact-card">
-        <div class="contact-icon">✉️</div>
-        <div class="contact-text">
-          <h3>Prasta Apps Studio</h3>
-          <p>Reach us through the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or the support option on the MyNotes listing on Google Play.</p>
-        </div>
-      </div>
+      <h2><span class="num">12</span> Disclaimer — not legal advice</h2>
+      <p class="fine-print">This document reflects <strong style="color:var(--white)">implemented</strong> MyNotes behaviour as of the <strong style="color:var(--white)">Last updated</strong> date: <strong style="color:var(--white)">local notes</strong>, <strong style="color:var(--white)">optional Firebase backup</strong>, <strong style="color:var(--white)">AdMob</strong> (native + optional rewarded), <strong style="color:var(--white)">one-time <code>remove_ads</code></strong> via <strong style="color:var(--white)">Play Billing</strong>, and <strong style="color:var(--white)">local entitlement caching</strong>. <strong style="color:var(--white)">It is not legal advice.</strong> Qualified counsel should review disclosures for GDPR, CPRA, LGPD, children’s privacy, COPPA jurisdictions, institutional use, <strong style="color:var(--white)">Google Play Data safety</strong> accuracy, and any region you target.</p>
+      <p style="margin-top:16px;">This Policy is hosted at a stable HTTPS URL. Link it from your <strong style="color:var(--white)">Google Play store listing</strong> and keep it aligned with your <strong style="color:var(--white)">Data safety</strong> form.</p>
     </div>
 
   </div>
