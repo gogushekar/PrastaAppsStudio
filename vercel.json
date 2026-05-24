@@ -6,6 +6,11 @@
       "source": "/tictac-clash-privacy",
       "destination": "/tictac-clash-privacy.html",
       "permanent": false
+    },
+    {
+      "source": "/mynotes-privacy",
+      "destination": "/mynotes-privacy.html",
+      "permanent": false
     }
   ],
   "rewrites": [

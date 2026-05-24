@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — MyNotes (Quick &amp; Simple) | Prasta Apps Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #080D1E;
+      --blue:   #1AAFDF;
+      --orange: #F5A623;
+      --white:  #F0F4FF;
+      --muted:  #8AA0C0;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Instrument Sans', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    #bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 40% at 10% 20%, rgba(26,175,223,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 30% at 90% 80%, rgba(245,166,35,.05) 0%, transparent 70%),
+        var(--navy);
+    }
+
+    main { position: relative; z-index: 1; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 60px;
+      border-bottom: 1px solid rgba(26,175,223,.12);
+      backdrop-filter: blur(10px);
+      background: rgba(8,13,30,.85);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-svg { width: 44px; height: 44px; }
+    .logo-text { font-family: 'Big Shoulders Display', sans-serif; font-size: 22px; letter-spacing: .04em; color: var(--white); }
+    .logo-text span { color: var(--blue); font-size: 13px; display: block; letter-spacing: .18em; font-family: 'Instrument Sans', sans-serif; font-weight: 400; margin-top: -2px; }
+    .back-link {
+      color: var(--muted); text-decoration: none; font-size: 14px;
+      letter-spacing: .06em; transition: color .2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .back-link:hover { color: var(--white); }
+
+    .page-hero {
+      padding: 80px 60px 60px;
+      max-width: 860px; margin: 0 auto;
+      animation: fadeUp .6s ease both;
+    }
+    .page-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(26,175,223,.10); border: 1px solid rgba(26,175,223,.25);
+      color: var(--blue); font-size: 11px; letter-spacing: .14em;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
+      width: fit-content; text-transform: uppercase;
+    }
+    h1 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: .95; letter-spacing: -.01em;
+      margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--blue); }
+    .meta {
+      font-size: 14px; color: var(--muted); letter-spacing: .04em;
+      margin-top: 8px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .meta strong { color: var(--white); font-weight: 600; }
+
+    .divider {
+      height: 1px; max-width: 860px; margin: 0 auto 0;
+      background: linear-gradient(90deg, transparent, rgba(26,175,223,.3), transparent);
+    }
+
+    .content {
+      max-width: 860px; margin: 0 auto;
+      padding: 60px 60px 100px;
+      animation: fadeUp .7s .1s ease both;
+    }
+
+    .section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    h2 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: .02em; margin-bottom: 16px;
+      display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap;
+    }
+    h2 .num {
+      font-size: 13px; color: var(--blue); letter-spacing: .12em;
+      background: rgba(26,175,223,.10); border: 1px solid rgba(26,175,223,.2);
+      padding: 3px 10px; border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif; font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 20px; letter-spacing: .02em;
+      margin: 24px 0 12px; color: var(--white);
+    }
+
+    p { color: var(--muted); margin-bottom: 16px; font-size: 16px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      color: var(--muted); padding-left: 20px; font-size: 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      margin-top: 12px; margin-bottom: 16px;
+    }
+    ul li::marker { color: var(--blue); }
+
+    .highlight-box {
+      background: rgba(26,175,223,.06);
+      border: 1px solid rgba(26,175,223,.18);
+      border-left: 3px solid var(--blue);
+      border-radius: 10px; padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .highlight-box p, .highlight-box li { color: var(--white); font-size: 15px; }
+    .highlight-box ul { margin-bottom: 0; }
+
+    code {
+      font-family: ui-monospace, 'Cascadia Code', monospace;
+      font-size: 0.9em;
+      background: rgba(255,255,255,.08);
+      padding: 2px 6px; border-radius: 4px;
+      color: var(--white);
+    }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      margin: 16px 0 20px; font-size: 15px;
+    }
+    .data-table th, .data-table td {
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 12px 14px; text-align: left; vertical-align: top;
+    }
+    .data-table th {
+      background: rgba(26,175,223,.08);
+      color: var(--white); font-weight: 600;
+    }
+    .data-table td { color: var(--muted); }
+    .data-table td:first-child { color: var(--white); }
+
+    a.inline { color: var(--blue); text-decoration: none; word-break: break-word; }
+    a.inline:hover { text-decoration: underline; }
+
+    .contact-card {
+      background: rgba(245,166,35,.06);
+      border: 1px solid rgba(245,166,35,.2);
+      border-radius: 16px; padding: 32px;
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .contact-icon { font-size: 36px; }
+    .contact-text h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 22px; margin-bottom: 6px; margin-top: 0;
+    }
+    .contact-text p { margin: 0; font-size: 15px; }
+
+    .fine-print {
+      font-size: 14px; color: var(--muted);
+      background: rgba(255,255,255,.03);
+      border-radius: 10px; padding: 16px 20px;
+    }
+
+    footer {
+      max-width: 860px; margin: 0 auto;
+      padding: 40px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-left { font-size: 13px; color: var(--muted); }
+    .footer-left strong { color: var(--white); }
+    .footer-badge {
+      font-size: 11px; letter-spacing: .12em; color: var(--muted);
+      border: 1px solid rgba(255,255,255,.1); padding: 6px 14px; border-radius: 100px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 20px 24px; }
+      .page-hero, .content { padding-left: 24px; padding-right: 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+      .data-table { font-size: 14px; }
+      .data-table th, .data-table td { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div id="bg"></div>
+<main>
+
+  <nav>
+    <a class="logo-wrap" href="index.html">
+      <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="44" height="44" rx="10" fill="#0D1628"/>
+        <rect x="10" y="8" width="8" height="28" rx="2" fill="#1AAFDF"/>
+        <path d="M18 8 Q34 8 34 18 Q34 28 18 28" stroke="#1AAFDF" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <rect x="11" y="14" width="14" height="8" rx="1" fill="#0D1628"/>
+        <line x1="21" y1="27" x2="34" y2="36" stroke="#F5A623" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        PRASTA
+        <span>APPS STUDIO</span>
+      </div>
+    </a>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-tag">MyNotes · Quick &amp; Simple</div>
+    <h1>PRIVACY<br/><span class="accent">POLICY.</span></h1>
+    <p class="meta">
+      <span><strong>App:</strong> MyNotes — Quick &amp; Simple</span>
+      <span><strong>Package:</strong> <code>com.mynotes.quicksimple</code></span>
+      <span><strong>Developer:</strong> Prasta Apps Studio</span>
+      <span><strong>Last updated:</strong> May 24, 2026</span>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="content">
+
+    <div class="section">
+      <p>This Privacy Policy describes how <strong style="color:var(--white)">MyNotes</strong> (the Android application packaged as <code>com.mynotes.quicksimple</code>; debug builds may use <code>com.mynotes.quicksimple.debug</code>) (“App”, “we”, “us”) collects, uses, stores, and shares information when you use the App.</p>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text">
+          <h3>Contact</h3>
+          <p><strong style="color:var(--white)">Prasta Apps Studio</strong> — privacy inquiries via the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or the support option on the MyNotes Play listing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">—</span> Summary</h2>
+      <div class="highlight-box">
+        <ul>
+          <li><strong>Notes and notebooks are stored primarily on your device.</strong></li>
+          <li>If you <strong>choose to sign in with Google</strong>, we sync an encrypted-in-transit snapshot of your notebooks and notes to <strong>Google Firebase / Firestore</strong> associated with <strong>your Google account</strong>, for <strong>backup and restore</strong>.</li>
+          <li>The App uses <strong>Google AdMob</strong> to show advertisements.</li>
+          <li>Firebase may provide <strong>crash, diagnostic, and analytics-related services</strong> depending on SDK configuration.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">01</span> Information the App processes</h2>
+
+      <h3>1.1 Information you enter in the App</h3>
+      <table class="data-table">
+        <thead><tr><th>Data</th><th>Typical use</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Note content</strong> (titles, bodies, checklist text, reminders, notebook names, styling metadata)</td>
+            <td>Core note-taking functionality, stored locally; optional cloud backup and restore</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>1.2 Device and usage data</h3>
+      <table class="data-table">
+        <thead><tr><th>Data</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Firebase installation / app instance identifiers</strong> used by Firebase SDKs</td>
+            <td>App configuration and Firebase services (Analytics, Messaging if enabled, Installation IDs, etc.—per Firebase documentation)</td>
+          </tr>
+          <tr>
+            <td><strong>Advertising identifiers and ad-related telemetry</strong></td>
+            <td>Delivering and measuring ads through <strong>Google AdMob</strong> (subject to Google’s policies and your device settings)</td>
+          </tr>
+          <tr>
+            <td><strong>Technical logs/diagnostics on your device</strong></td>
+            <td>Debugging and security (mostly visible to developers via Android Studio/logcat—not sent to our servers unless a third-party SDK does so according to its own policy, e.g. Google/Firebase)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Exact categories depend on Firebase/Play Services SDK versions—see the <a class="inline" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Firebase Privacy Policy</a> and <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy &amp; Terms</a>.</p>
+
+      <h3>1.3 Optional cloud backup (Google Sign-In)</h3>
+      <p>If you tap <strong style="color:var(--white)">sign in / cloud backup</strong>:</p>
+      <ul>
+        <li>Firebase <strong>Authentication</strong> may process identifiers linked to <strong>your Google account</strong> (e.g. account email/UID shown in the SDK) solely to authenticate you.</li>
+        <li><strong>Cloud Firestore</strong> stores <strong>documents representing your notebooks and notes</strong> under a path keyed to <strong>your Firebase user ID</strong>, so backup/restore works across installs.</li>
+      </ul>
+      <p>Signing out stops new authenticated access from <strong>this installation</strong> until you sign in again. Deleting documents in Firebase follows the logic <strong>you trigger in the App</strong> (for example restore from backup, manual backup behaviour, or permanent delete flows as implemented).</p>
+
+      <h3>1.4 Local storage and backups you control</h3>
+      <p>You may <strong style="color:var(--white)">export/import</strong> notes (e.g. as files). Files you export are <strong style="color:var(--white)">controlled by you</strong> and your chosen sharing targets (Downloads, messaging apps, USB, etc.). We do not receive those exports unless <strong style="color:var(--white)">you choose</strong> to upload them elsewhere.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">02</span> How we use information</h2>
+      <p>We use the above information solely to:</p>
+      <ul>
+        <li>Provide <strong style="color:var(--white)">note-taking, reminders, notebooks, trash/archive</strong>, search, templates, export/import</li>
+        <li>Optionally provide <strong style="color:var(--white)">authenticated cloud backup/restore</strong> (Firebase Auth + Firestore)</li>
+        <li>Show <strong style="color:var(--white)">advertisements</strong> (AdMob) and measure their performance subject to policies</li>
+        <li>Operate and improve Firebase-related SDK features as configured</li>
+      </ul>
+      <p>We <strong style="color:var(--white)">do not sell your personal note content</strong> as a product. Third-party ad and analytics frameworks may collect data under <strong style="color:var(--white)">their own</strong> policies—see section 04.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">03</span> Legal bases (EEA / UK users)</h2>
+      <p>Where GDPR/UK GDPR applies, we rely on:</p>
+      <ul>
+        <li><strong style="color:var(--white)">Contract / steps prior to contract</strong> — providing the note features you requested</li>
+        <li><strong style="color:var(--white)">Legitimate interests</strong> — secure operation, preventing abuse where proportionate, basic product analytics tied to Firebase as configured, ad-funded free tier (each subject to overriding rights and objections where applicable)</li>
+        <li><strong style="color:var(--white)">Consent</strong> — where platforms or laws require consent (e.g. certain ads/personalisation settings on your device)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">04</span> Third-party services</h2>
+      <p>Processing may involve:</p>
+      <table class="data-table">
+        <thead><tr><th>Provider</th><th>Purpose</th><th>Policy</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Analytics as enabled)</td>
+            <td>Optional account sign-in and cloud datastore; Firebase product telemetry</td>
+            <td><a class="inline" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Google Ads / Google Mobile Ads (AdMob)</strong></td>
+            <td>Advertising</td>
+            <td><a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a> · <a class="inline" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Google Play / Android system services</strong></td>
+            <td>App distribution / platform APIs</td>
+            <td>Platform provider policies</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Firebase and Google Ads may operate as processors under your agreement with Google, or exercise independent roles depending on jurisdiction—consult Google disclosures.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">05</span> Data retention</h2>
+      <ul>
+        <li><strong style="color:var(--white)">On device:</strong> persists until <strong style="color:var(--white)">you uninstall the App</strong>, <strong style="color:var(--white)">clear storage</strong>, or delete data inside the App. Purge-after-period rules implemented in-app (for example automated trash pruning) affect <strong style="color:var(--white)">device</strong> retention only unless changes are synced to cloud per your flows.</li>
+        <li><strong style="color:var(--white)">In Firebase (if you use backup):</strong> notebook/note documents persist until overwritten, deleted according to App actions, or you contact us to request account/data deletion where applicable.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">06</span> Children</h2>
+      <p>The App is <strong style="color:var(--white)">not directed to children under 13</strong> (or the minimum age defined in your country). If you discover a child supplied personal information, contact us—we will assist with deletion consistent with applicable law.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">07</span> Security</h2>
+      <p>We use <strong style="color:var(--white)">HTTPS/TLS-protected Google/Firebase APIs</strong> provided by Firebase SDKs. <strong style="color:var(--white)">No backend run by us receives your notes</strong>, except indirectly through Firebase under Google’s Terms. Perfect security does not exist—protect device access and your Google/Firebase account.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">08</span> International transfers</h2>
+      <p>Google may process Firebase/Ads data in <strong style="color:var(--white)">multiple countries</strong>. See the <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and Firebase data processing disclosures.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">09</span> Your choices</h2>
+      <p>You can:</p>
+      <ul>
+        <li><strong style="color:var(--white)">Decline cloud sign-in</strong> — backups to Google won’t authenticate as you (offline/local use retained).</li>
+        <li><strong style="color:var(--white)">Sign out</strong> in the App.</li>
+        <li><strong style="color:var(--white)">Reset ad personalization</strong> via Google / device Settings (see Google Help).</li>
+        <li><strong style="color:var(--white)">Request Firebase/Google account data, export, or deletion</strong> per Google tooling where applicable, or contact us via the Play listing.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">10</span> Permissions (Android)</h2>
+      <p>The App may request or use capabilities such as:</p>
+      <table class="data-table">
+        <thead><tr><th>Permission / capability</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code></td>
+            <td>Network &amp; ads, Firebase, optional backups</td>
+          </tr>
+          <tr>
+            <td><code>POST_NOTIFICATIONS</code></td>
+            <td>Note reminders/notifications (Android 13+)</td>
+          </tr>
+          <tr>
+            <td><code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code></td>
+            <td>Exact-time reminders where supported</td>
+          </tr>
+          <tr>
+            <td><code>VIBRATE</code></td>
+            <td>Notification/reminder cues</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">11</span> Changes</h2>
+      <p>We may update this Policy. Material changes will be reflected by an updated “Last updated” date on this page and, where appropriate, in the Google Play listing or in-app notice.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">12</span> Contact</h2>
+      <p>Questions about this Privacy Policy or MyNotes data practices:</p>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text">
+          <h3>Prasta Apps Studio</h3>
+          <p>Reach us through the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or the support option on the MyNotes listing on Google Play.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <strong>Prasta Apps Studio</strong><br/>
+      <span>© 2026 Prasta Apps Studio. All rights reserved.</span>
+    </div>
+    <div class="footer-badge">MYNOTES</div>
+  </footer>
+
+</main>
+</body>
+</html>
