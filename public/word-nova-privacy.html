@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Word Nova: Search &amp; Find | Prasta Apps Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #080D1E;
+      --blue:   #1AAFDF;
+      --orange: #F5A623;
+      --white:  #F0F4FF;
+      --muted:  #8AA0C0;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Instrument Sans', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    #bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 40% at 10% 20%, rgba(26,175,223,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 30% at 90% 80%, rgba(245,166,35,.05) 0%, transparent 70%),
+        var(--navy);
+    }
+
+    main { position: relative; z-index: 1; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 60px;
+      border-bottom: 1px solid rgba(26,175,223,.12);
+      backdrop-filter: blur(10px);
+      background: rgba(8,13,30,.85);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-svg { width: 44px; height: 44px; }
+    .logo-text { font-family: 'Big Shoulders Display', sans-serif; font-size: 22px; letter-spacing: .04em; color: var(--white); }
+    .logo-text span { color: var(--blue); font-size: 13px; display: block; letter-spacing: .18em; font-family: 'Instrument Sans', sans-serif; font-weight: 400; margin-top: -2px; }
+    .back-link {
+      color: var(--muted); text-decoration: none; font-size: 14px;
+      letter-spacing: .06em; transition: color .2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .back-link:hover { color: var(--white); }
+
+    .page-hero {
+      padding: 80px 60px 60px;
+      max-width: 860px; margin: 0 auto;
+      animation: fadeUp .6s ease both;
+    }
+    .page-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,166,35,.10); border: 1px solid rgba(245,166,35,.25);
+      color: var(--orange); font-size: 11px; letter-spacing: .14em;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
+      width: fit-content; text-transform: uppercase;
+    }
+    h1 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: .95; letter-spacing: -.01em;
+      margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--blue); }
+    .meta {
+      font-size: 14px; color: var(--muted); letter-spacing: .04em;
+      margin-top: 8px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .meta strong { color: var(--white); font-weight: 600; }
+
+    .divider {
+      height: 1px; max-width: 860px; margin: 0 auto 0;
+      background: linear-gradient(90deg, transparent, rgba(26,175,223,.3), transparent);
+    }
+
+    .content {
+      max-width: 860px; margin: 0 auto;
+      padding: 60px 60px 100px;
+      animation: fadeUp .7s .1s ease both;
+    }
+
+    .section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    h2 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: .02em; margin-bottom: 16px;
+      display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap;
+    }
+    h2 .num {
+      font-size: 13px; color: var(--blue); letter-spacing: .12em;
+      background: rgba(26,175,223,.10); border: 1px solid rgba(26,175,223,.2);
+      padding: 3px 10px; border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif; font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 20px; letter-spacing: .02em;
+      margin: 24px 0 12px; color: var(--white);
+    }
+
+    p { color: var(--muted); margin-bottom: 16px; font-size: 16px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      color: var(--muted); padding-left: 20px; font-size: 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      margin-top: 12px; margin-bottom: 16px;
+    }
+    ul li::marker { color: var(--blue); }
+
+    .highlight-box {
+      background: rgba(26,175,223,.06);
+      border: 1px solid rgba(26,175,223,.18);
+      border-left: 3px solid var(--blue);
+      border-radius: 10px; padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .highlight-box p, .highlight-box li { color: var(--white); font-size: 15px; }
+    .highlight-box ul { margin-bottom: 0; }
+
+    a.inline { color: var(--blue); text-decoration: none; word-break: break-word; }
+    a.inline:hover { text-decoration: underline; }
+
+    .contact-card {
+      background: rgba(245,166,35,.06);
+      border: 1px solid rgba(245,166,35,.2);
+      border-radius: 16px; padding: 32px;
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .contact-icon { font-size: 36px; }
+    .contact-text h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 22px; margin-bottom: 6px; margin-top: 0;
+    }
+    .contact-text p { margin: 0; font-size: 15px; }
+
+    footer {
+      max-width: 860px; margin: 0 auto;
+      padding: 40px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-left { font-size: 13px; color: var(--muted); }
+    .footer-left strong { color: var(--white); }
+    .footer-badge {
+      font-size: 11px; letter-spacing: .12em; color: var(--muted);
+      border: 1px solid rgba(255,255,255,.1); padding: 6px 14px; border-radius: 100px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 20px 24px; }
+      .page-hero, .content { padding-left: 24px; padding-right: 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div id="bg"></div>
+<main>
+
+  <nav>
+    <a class="logo-wrap" href="index.html">
+      <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="44" height="44" rx="10" fill="#0D1628"/>
+        <rect x="10" y="8" width="8" height="28" rx="2" fill="#1AAFDF"/>
+        <path d="M18 8 Q34 8 34 18 Q34 28 18 28" stroke="#1AAFDF" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <rect x="11" y="14" width="14" height="8" rx="1" fill="#0D1628"/>
+        <line x1="21" y1="27" x2="34" y2="36" stroke="#F5A623" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        PRASTA
+        <span>APPS STUDIO</span>
+      </div>
+    </a>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-tag">Word Nova</div>
+    <h1>PRIVACY<br/><span class="accent">POLICY.</span></h1>
+    <p class="meta">
+      <span><strong>App:</strong> Word Nova: Search &amp; Find</span>
+      <span><strong>Developer:</strong> Prasta Apps Studio</span>
+      <span><strong>Effective date:</strong> May 24, 2026</span>
+      <span><strong>Last updated:</strong> May 24, 2026</span>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="content">
+
+    <div class="section">
+      <p><strong style="color:var(--white)">Word Nova: Search &amp; Find</strong> (“Word Nova,” “we,” “us,” or “our”) is a word search puzzle game for Android published by <strong style="color:var(--white)">Prasta Apps Studio</strong>.</p>
+      <p>This Privacy Policy explains how we collect, use, and share information when you use the Word Nova mobile application (the “App”).</p>
+      <div class="highlight-box">
+        <p>By using the App, you agree to this Privacy Policy. If you do not agree, please do not use the App.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">01</span> Information We Collect</h2>
+
+      <h3>1.1 Information stored on your device (not sent to our servers)</h3>
+      <p>Word Nova does not require you to create an account. Most app data is stored locally on your device using Android’s on-device storage (Jetpack DataStore), including:</p>
+      <ul>
+        <li><strong style="color:var(--white)">Game progress:</strong> category levels, puzzles completed, words found, scores, streaks, daily challenge status</li>
+        <li><strong style="color:var(--white)">Player profile:</strong> coins, XP, unlocked categories, purchased content flags</li>
+        <li><strong style="color:var(--white)">Statistics:</strong> play time, longest word, category progress, and similar gameplay stats</li>
+        <li><strong style="color:var(--white)">Settings:</strong> sound, music, vibration, font size, grid theme, colorblind mode, left-handed layout, notification preference, and other display/gameplay options</li>
+      </ul>
+      <p>We do not operate our own backend servers to store this information. If you uninstall the App or clear app data, this information may be lost unless restored from a device backup.</p>
+      <p><strong style="color:var(--white)">Android backup:</strong> The App may allow Android’s backup/restore features (<code>allowBackup</code> is enabled). Backup content is handled by Google/your device manufacturer under their policies.</p>
+
+      <h3>1.2 Information collected by third-party services</h3>
+      <p>The App uses third-party services that may collect information automatically:</p>
+
+      <p><strong style="color:var(--white)">Google AdMob (advertising)</strong></p>
+      <p>If you have not purchased “Remove Ads” or a premium option that disables ads, the App displays ads through Google AdMob, including:</p>
+      <ul>
+        <li>Banner ads</li>
+        <li>Interstitial ads</li>
+        <li>Rewarded video ads</li>
+        <li>App open ads</li>
+      </ul>
+      <p>AdMob may collect or receive information such as:</p>
+      <ul>
+        <li>Advertising ID (AAID)</li>
+        <li>Device type, OS version, language, and general location (e.g., country/region inferred from IP)</li>
+        <li>App interactions with ads (impressions, clicks)</li>
+        <li>IP address and network-related data</li>
+      </ul>
+      <p>The App declares the <code>AD_ID</code> permission and related ad services permissions required for advertising on modern Android versions.</p>
+      <p>For more information, see <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a> and <a class="inline" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google Ads / AdMob</a>.</p>
+      <p>You can limit ad personalization on your device via <strong style="color:var(--white)">Settings → Google → Ads</strong> (wording may vary by device).</p>
+
+      <p><strong style="color:var(--white)">Google Play Billing (in-app purchases)</strong></p>
+      <p>Purchases (coins, hint packs, category packs, Remove Ads, Premium Pass, etc.) are processed by Google Play. We do not collect or store your payment card or billing details.</p>
+      <p>Google may provide us with purchase confirmation and product identifiers so we can unlock content in the App. That entitlement is stored locally on your device.</p>
+      <p>See: <a class="inline" href="https://play.google.com/intl/ALL_en/about/play-terms/" target="_blank" rel="noopener">Google Play Terms of Service</a> and <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+
+      <h3>1.3 Information we do not collect</h3>
+      <p>We do not knowingly collect:</p>
+      <ul>
+        <li>Name, email address, phone number, or mailing address</li>
+        <li>User accounts or passwords</li>
+        <li>Precise GPS location</li>
+        <li>Contacts, photos, microphone, or camera data</li>
+        <li>Health or financial account information</li>
+      </ul>
+      <p>The App does not include Firebase Analytics, Crashlytics, or similar analytics SDKs in the current version.</p>
+
+      <h3>1.4 Share feature</h3>
+      <p>The App may let you share daily puzzle results using Android’s standard share sheet (<code>ACTION_SEND</code>). You choose whether and with whom to share. We do not receive the content you share.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">02</span> How We Use Information</h2>
+      <p>We use information to:</p>
+      <ul>
+        <li>Provide and operate the game (progress, settings, statistics)</li>
+        <li>Process and restore in-app purchases and entitlements</li>
+        <li>Show ads and measure ad performance (via AdMob)</li>
+        <li>Improve stability and user experience</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+      <p>We <strong style="color:var(--white)">do not sell</strong> your personal information.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">03</span> Legal Bases (EEA/UK users)</h2>
+      <p>If you are in the European Economic Area or United Kingdom, we process personal data based on:</p>
+      <ul>
+        <li><strong style="color:var(--white)">Contract:</strong> to provide the App and purchased features</li>
+        <li><strong style="color:var(--white)">Legitimate interests:</strong> to operate, secure, and improve the App</li>
+        <li><strong style="color:var(--white)">Consent:</strong> where required for ads or notifications (you can withdraw consent in device or app settings)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">04</span> Children’s Privacy</h2>
+      <p>Word Nova is intended for a general audience and is <strong style="color:var(--white)">not directed at children under 13</strong>. We do not knowingly collect personal information from children under 13.</p>
+      <p>If you believe a child under 13 has provided personal information through the App, contact us via the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or the support option on the Word Nova listing, and we will take appropriate steps.</p>
+      <p>Parents and guardians can use device-level parental controls and Google Play purchase authentication.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">05</span> Your Choices and Rights</h2>
+
+      <h3>All users</h3>
+      <ul>
+        <li><strong style="color:var(--white)">In-app settings:</strong> Adjust sound, vibration, notifications, and other preferences in Settings</li>
+        <li><strong style="color:var(--white)">Ads:</strong> Purchase Remove Ads / Premium (where available), or use device ad settings to limit personalization</li>
+        <li><strong style="color:var(--white)">Notifications:</strong> Enable or disable in Settings; Android 13+ also requires system notification permission</li>
+        <li><strong style="color:var(--white)">Delete data:</strong> Uninstall the App or clear storage via Android Settings → Apps → Word Nova → Storage</li>
+      </ul>
+
+      <h3>California residents (CCPA/CPRA)</h3>
+      <p>You may have the right to:</p>
+      <ul>
+        <li>Know what personal information is collected</li>
+        <li>Request deletion of personal information we maintain (if any)</li>
+        <li>Opt out of the “sale” or “sharing” of personal information for cross-context behavioral advertising</li>
+      </ul>
+      <p>Because we do not operate a user account system, most data stays on your device or is handled by Google (ads/billing). For AdMob-related choices, use Google’s ad settings and, where offered, in-app ad consent tools required in your region.</p>
+      <p>To exercise rights, contact us via the Google Play developer page or Word Nova listing support.</p>
+
+      <h3>EEA/UK residents (GDPR)</h3>
+      <p>You may have rights to access, rectify, erase, restrict, object, and data portability where applicable. Contact us via the Play listing. You may also lodge a complaint with your local data protection authority.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">06</span> Data Retention</h2>
+      <ul>
+        <li><strong style="color:var(--white)">On-device data:</strong> Kept until you delete the App, clear app data, or restore from backup</li>
+        <li><strong style="color:var(--white)">Purchase records:</strong> Retained by Google Play according to Google’s policies; we retain only what is needed locally to unlock features</li>
+        <li><strong style="color:var(--white)">Ad data:</strong> Retained by Google according to AdMob/Google policies</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">07</span> Data Security</h2>
+      <p>We use reasonable measures to protect information within the App. No method of storage or transmission is 100% secure. Because most data is stored locally, you are responsible for securing your device.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">08</span> International Users</h2>
+      <p>The App is primarily offered to users in the United States. If you use the App from other countries, your information may be processed in the United States and other countries where Google and its partners operate, which may have different data protection laws.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">09</span> Third-Party Links and Services</h2>
+      <p>The App relies on third-party services (Google AdMob, Google Play). Their practices are governed by their own privacy policies. We are not responsible for third-party services.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">10</span> Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will post the updated version at <a class="inline" href="https://prasta-apps-studio.vercel.app/word-nova-privacy">https://prasta-apps-studio.vercel.app/word-nova-privacy</a> and update the “Last updated” date. Continued use after changes means you accept the updated policy.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">11</span> Contact Us</h2>
+      <p>If you have questions about this Privacy Policy or our data practices, contact:</p>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text">
+          <h3>Prasta Apps Studio</h3>
+          <p>Reach us through the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or the support option on the Word Nova listing on Google Play.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <strong>Prasta Apps Studio</strong><br/>
+      <span>© 2026 Prasta Apps Studio. All rights reserved.</span>
+    </div>
+    <div class="footer-badge">WORD NOVA</div>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -11,6 +11,11 @@
       "source": "/mynotes-privacy",
       "destination": "/mynotes-privacy.html",
       "permanent": false
+    },
+    {
+      "source": "/word-nova-privacy",
+      "destination": "/word-nova-privacy.html",
+      "permanent": false
     }
   ],
   "rewrites": [
