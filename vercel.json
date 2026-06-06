@@ -16,6 +16,11 @@
       "source": "/word-nova-privacy",
       "destination": "/word-nova-privacy.html",
       "permanent": false
+    },
+    {
+      "source": "/mynotes-delete-account",
+      "destination": "/mynotes-delete-account.html",
+      "permanent": false
     }
   ],
   "rewrites": [

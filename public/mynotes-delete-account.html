@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delete Account &amp; Data — MyNotes | Prasta Apps Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #080D1E;
+      --blue:   #1AAFDF;
+      --orange: #F5A623;
+      --white:  #F0F4FF;
+      --muted:  #8AA0C0;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Instrument Sans', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    #bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 40% at 10% 20%, rgba(26,175,223,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 30% at 90% 80%, rgba(245,166,35,.05) 0%, transparent 70%),
+        var(--navy);
+    }
+
+    main { position: relative; z-index: 1; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 60px;
+      border-bottom: 1px solid rgba(26,175,223,.12);
+      backdrop-filter: blur(10px);
+      background: rgba(8,13,30,.85);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-svg { width: 44px; height: 44px; }
+    .logo-text { font-family: 'Big Shoulders Display', sans-serif; font-size: 22px; letter-spacing: .04em; color: var(--white); }
+    .logo-text span { color: var(--blue); font-size: 13px; display: block; letter-spacing: .18em; font-family: 'Instrument Sans', sans-serif; font-weight: 400; margin-top: -2px; }
+    .back-link {
+      color: var(--muted); text-decoration: none; font-size: 14px;
+      letter-spacing: .06em; transition: color .2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .back-link:hover { color: var(--white); }
+
+    .page-hero {
+      padding: 80px 60px 60px;
+      max-width: 860px; margin: 0 auto;
+      animation: fadeUp .6s ease both;
+    }
+    .page-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,166,35,.10); border: 1px solid rgba(245,166,35,.25);
+      color: var(--orange); font-size: 11px; letter-spacing: .14em;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
+      width: fit-content; text-transform: uppercase;
+    }
+    h1 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(32px, 5.5vw, 56px);
+      line-height: .95; letter-spacing: -.01em;
+      margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--blue); }
+    .meta {
+      font-size: 14px; color: var(--muted); letter-spacing: .04em;
+      margin-top: 8px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .meta strong { color: var(--white); font-weight: 600; }
+
+    .divider {
+      height: 1px; max-width: 860px; margin: 0 auto 0;
+      background: linear-gradient(90deg, transparent, rgba(26,175,223,.3), transparent);
+    }
+
+    .content {
+      max-width: 860px; margin: 0 auto;
+      padding: 60px 60px 100px;
+      animation: fadeUp .7s .1s ease both;
+    }
+
+    .section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    h2 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: .02em; margin-bottom: 16px;
+      display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap;
+    }
+    h2 .num {
+      font-size: 13px; color: var(--blue); letter-spacing: .12em;
+      background: rgba(26,175,223,.10); border: 1px solid rgba(26,175,223,.2);
+      padding: 3px 10px; border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif; font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    p { color: var(--muted); margin-bottom: 16px; font-size: 16px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      color: var(--muted); padding-left: 20px; font-size: 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      margin-top: 12px; margin-bottom: 16px;
+    }
+    ul li::marker, ol li::marker { color: var(--blue); }
+
+    code {
+      font-family: ui-monospace, 'Cascadia Code', monospace;
+      font-size: 0.9em;
+      background: rgba(255,255,255,.08);
+      padding: 2px 6px; border-radius: 4px;
+      color: var(--white);
+    }
+
+    .highlight-box {
+      background: rgba(26,175,223,.06);
+      border: 1px solid rgba(26,175,223,.18);
+      border-left: 3px solid var(--blue);
+      border-radius: 10px; padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .highlight-box p, .highlight-box li { color: var(--white); font-size: 15px; }
+    .highlight-box ul { margin-bottom: 0; }
+
+    .option-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 20px 0;
+    }
+    .option-card h2 { margin-bottom: 12px; font-size: clamp(20px, 2.5vw, 26px); }
+    .option-card .num { background: rgba(245,166,35,.12); border-color: rgba(245,166,35,.25); color: var(--orange); }
+
+    a.inline { color: var(--blue); text-decoration: none; word-break: break-word; }
+    a.inline:hover { text-decoration: underline; }
+
+    .contact-card {
+      background: rgba(245,166,35,.06);
+      border: 1px solid rgba(245,166,35,.2);
+      border-radius: 16px; padding: 32px;
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .contact-icon { font-size: 36px; }
+    .contact-text h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 22px; margin-bottom: 6px; margin-top: 0;
+    }
+    .contact-text p { margin: 0; font-size: 15px; }
+
+    footer {
+      max-width: 860px; margin: 0 auto;
+      padding: 40px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-left { font-size: 13px; color: var(--muted); }
+    .footer-left strong { color: var(--white); }
+    .footer-badge {
+      font-size: 11px; letter-spacing: .12em; color: var(--muted);
+      border: 1px solid rgba(255,255,255,.1); padding: 6px 14px; border-radius: 100px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 20px 24px; }
+      .page-hero, .content { padding-left: 24px; padding-right: 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div id="bg"></div>
+<main>
+
+  <nav>
+    <a class="logo-wrap" href="index.html">
+      <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="44" height="44" rx="10" fill="#0D1628"/>
+        <rect x="10" y="8" width="8" height="28" rx="2" fill="#1AAFDF"/>
+        <path d="M18 8 Q34 8 34 18 Q34 28 18 28" stroke="#1AAFDF" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <rect x="11" y="14" width="14" height="8" rx="1" fill="#0D1628"/>
+        <line x1="21" y1="27" x2="34" y2="36" stroke="#F5A623" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        PRASTA
+        <span>APPS STUDIO</span>
+      </div>
+    </a>
+    <a class="back-link" href="/mynotes-privacy">← MyNotes Privacy Policy</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-tag">MyNotes · Account deletion</div>
+    <h1>DELETE ACCOUNT<br/><span class="accent">&amp; DATA.</span></h1>
+    <p class="meta">
+      <span><strong>App:</strong> MyNotes (<code>com.mynotes.quicksimple</code>)</span>
+      <span><strong>Developer:</strong> Prasta Apps Studio</span>
+    </p>
+    <div class="contact-card" style="margin-top:28px;">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-text">
+        <h3>Contact</h3>
+        <p>For deletion requests, use the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or the support option on the MyNotes listing on Google Play. See <strong style="color:var(--white)">Option C</strong> below for what to include in your message.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="content">
+
+    <div class="section">
+      <h2><span class="num">—</span> What “account” means in MyNotes</h2>
+      <p>MyNotes does <strong style="color:var(--white)">not</strong> use a separate username/password. If you used <strong style="color:var(--white)">Sign in with Google</strong> for cloud backup, your account is your <strong style="color:var(--white)">Google-linked Firebase account</strong> used to store backup data in <strong style="color:var(--white)">Google Firebase (Firestore)</strong>.</p>
+      <div class="highlight-box">
+        <p>You can use MyNotes <strong>without signing in</strong>; in that case there is <strong>no cloud account</strong>, only data on your device.</p>
+      </div>
+      <p>See also our <a class="inline" href="/mynotes-privacy">MyNotes Privacy Policy</a>.</p>
+    </div>
+
+    <div class="section">
+      <div class="option-card">
+        <h2><span class="num">A</span> Delete data on your device only (no cloud account)</h2>
+        <ol>
+          <li>Open <strong style="color:var(--white)">Android Settings → Apps → MyNotes → Storage</strong>.</li>
+          <li>Tap <strong style="color:var(--white)">Clear data</strong> (or uninstall the app).</li>
+        </ol>
+        <p><strong style="color:var(--white)">Deleted:</strong> notes, notebooks, and app preferences on that device.</p>
+        <p><strong style="color:var(--white)">Not deleted:</strong> nothing in the cloud (you were not signed in).</p>
+      </div>
+
+      <div class="option-card">
+        <h2><span class="num">B</span> Remove cloud backup content yourself (signed in)</h2>
+        <ol>
+          <li>Open MyNotes → menu (☰) → <strong style="color:var(--white)">Sign in with Google</strong> (if not already).</li>
+          <li>Permanently delete notes you want removed (<strong style="color:var(--white)">Trash → Delete forever</strong>, or <strong style="color:var(--white)">Empty trash</strong>). This removes those note documents from your Google backup when signed in.</li>
+          <li>Menu → <strong style="color:var(--white)">Sign out</strong>.</li>
+        </ol>
+        <p><strong style="color:var(--white)">Deleted:</strong> those notes from cloud backup; local data remains until you clear app data.</p>
+        <p><strong style="color:var(--white)">May remain in cloud:</strong> notebook metadata and any notes not permanently deleted; Firebase account record until you request full deletion (Option C).</p>
+        <p><strong style="color:var(--white)">Signing out alone does not delete cloud backup data.</strong></p>
+      </div>
+
+      <div class="option-card">
+        <h2><span class="num">C</span> Request full account and cloud data deletion</h2>
+        <p>Contact us via the <a class="inline" href="https://play.google.com/store/apps/developer?id=Prasta+Apps+Studio" target="_blank" rel="noopener">Google Play developer page</a> or MyNotes listing support with:</p>
+        <ul>
+          <li><strong style="color:var(--white)">Subject:</strong> MyNotes account deletion</li>
+          <li>Your <strong style="color:var(--white)">Google account email</strong> used to sign in</li>
+          <li>Confirmation that you want <strong style="color:var(--white)">all MyNotes cloud backup data deleted</strong></li>
+        </ul>
+        <p>We will verify the request and, within <strong style="color:var(--white)">30 days</strong>, delete:</p>
+        <ul>
+          <li>Firestore documents under your user backup (notebooks, notes, metadata)</li>
+          <li>The Firebase Authentication record associated with that sign-in</li>
+        </ul>
+        <p>We <strong style="color:var(--white)">cannot delete your Google account itself</strong> — manage that at <a class="inline" href="https://myaccount.google.com/" target="_blank" rel="noopener">Google Account</a>.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">—</span> Kept / not controlled by us</h2>
+      <ul>
+        <li><strong style="color:var(--white)">Google Play purchase records</strong> for “Remove ads” — manage via <a class="inline" href="https://play.google.com/store/account" target="_blank" rel="noopener">Google Play</a></li>
+        <li><strong style="color:var(--white)">Ad/analytics data</strong> held by Google (AdMob, Firebase Analytics) per Google’s policies</li>
+        <li><strong style="color:var(--white)">Data on devices</strong> you have not cleared locally</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="num">—</span> Retention</h2>
+      <p>After a verified deletion request, we aim to complete cloud deletion within <strong style="color:var(--white)">30 days</strong>. Backups or logs we do not operate (Google/Firebase) follow Google’s retention rules.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <strong>Prasta Apps Studio</strong><br/>
+      <span>© 2026 Prasta Apps Studio. All rights reserved.</span>
+    </div>
+    <div class="footer-badge">MYNOTES</div>
+  </footer>
+
+</main>
+</body>
+</html>
